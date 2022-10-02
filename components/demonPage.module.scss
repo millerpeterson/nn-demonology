@@ -1,0 +1,45 @@
+.demon {
+  min-height: 100vh;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image {
+  width: 512px;
+  position: sticky;
+  top: 15px;
+}
+
+.text {
+  max-width: 480px;
+  margin-left: 30px;
+  height: 512px;
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  flex-grow: 1;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    font-size: 1.35rem;
+  }
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: row;
+  a, div {
+    width: 33%;
+  }
+  .middle {
+    text-align: center;
+  }
+}
