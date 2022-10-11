@@ -1,32 +1,38 @@
 .demon {
-  min-height: 100vh;
-  padding: 15px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+  @media(max-width: 850px) {
+    height: 950px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .image {
+      width: 90%;
+      position: sticky;
+      top: 15px;
+    }
+    .text {
+      width: 90%;
+    }
+  }
 
-.image {
-  width: 512px;
-  position: relative;
-  top: 15px;
+  @media(min-width: 850px) {
+    height: 100vh;
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
-  .imageFrame {
-    width: 512px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    img {
-      transition: opacity 4s ease-in;
+    .text {
+      margin-left: 30px;
+    }
+
+    .image {
+      width: 512px;
     }
   }
 }
 
-
 .text {
   max-width: 480px;
-  margin-left: 30px;
   height: 512px;
   display: flex;
   flex-direction: column;
@@ -49,6 +55,9 @@
   flex-direction: row;
   a, div {
     width: 33%;
+  }
+  a {
+    color: rgba(0, 0, 0, 0.7);
   }
   .middle {
     text-align: center;

@@ -39,15 +39,7 @@ export default function DemonPage({ demon, children }: DemonPageProps) {
   const randomImageIndex = () =>
     Math.floor(Math.random() * demon.images.length);
 
-  const [image1Index] = useState(randomImageIndex());
-  const [image2Index] = useState(randomImageIndex());
-
-  const [crossfade, setCrossfade] = useState(Math.random);
-
-  function warp() {
-    setCrossfade(Math.random());
-  }
-  useInterval(warp, warpDelay);
+  const [imageIndex] = useState(randomImageIndex());
 
   const prevPage =
     rank > 1
@@ -65,21 +57,8 @@ export default function DemonPage({ demon, children }: DemonPageProps) {
     >
       <div className={styles.image}>
         <div className={styles.imageFrame}>
-          <Image
-            src={images[image1Index]}
-            style={{ opacity: crossfade }}
-            alt=""
-          />
+          <Image src={images[imageIndex]} alt="" />
         </div>
-        {images.length > 1 && (
-          <div className={styles.imageFrame}>
-            <Image
-              src={images[image2Index]}
-              alt=""
-              style={{ opacity: 1.0 - crossfade }}
-            />
-          </div>
-        )}
       </div>
       <div className={styles.text}>
         <div className={styles.description}>
