@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import demonPages, { Demon } from "../pages/demons";
+import { useInterval } from "../hooks/useInterval";
 
 import styles from "./demonPage.module.scss";
 import { Property } from "csstype";
 import TextAlign = Property.TextAlign;
+import { useState } from "react";
 
 interface DemonLinkProps {
   demon: Demon;
@@ -24,14 +26,29 @@ function DemonLink({ demon, direction }: DemonLinkProps) {
     </Link>
   );
 }
-
 interface DemonPageProps {
   demon: Demon;
   children: string;
 }
 
+const warpDelay = 5000;
+
 export default function DemonPage({ demon, children }: DemonPageProps) {
   const { name, title, images, rank } = demon;
+
+  const randomImageIndex = () =>
+    Math.floor(Math.random() * demon.images.length);
+
+  const [image1Index] = useState(randomImageIndex());
+  const [image2Index] = useState(randomImageIndex());
+
+  const [crossfade, setCrossfade] = useState(Math.random);
+
+  function warp() {
+    setCrossfade(Math.random());
+  }
+  useInterval(warp, warpDelay);
+
   const prevPage =
     rank > 1
       ? demonPages.find((demonPage) => demonPage.rank === rank - 1)
@@ -40,13 +57,29 @@ export default function DemonPage({ demon, children }: DemonPageProps) {
     rank < Math.max(...demonPages.map((page) => page.rank))
       ? demonPages.find((demonPage) => demonPage.rank === rank + 1)
       : null;
+
   return (
     <section
       style={{ backgroundColor: demon.backgroundColor }}
       className={styles.demon}
     >
       <div className={styles.image}>
-        <Image src={images[0]} alt="" />
+        <div className={styles.imageFrame}>
+          <Image
+            src={images[image1Index]}
+            style={{ opacity: crossfade }}
+            alt=""
+          />
+        </div>
+        {images.length > 1 && (
+          <div className={styles.imageFrame}>
+            <Image
+              src={images[image2Index]}
+              alt=""
+              style={{ opacity: 1.0 - crossfade }}
+            />
+          </div>
+        )}
       </div>
       <div className={styles.text}>
         <div className={styles.description}>

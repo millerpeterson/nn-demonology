@@ -9,9 +9,20 @@
 
 .image {
   width: 512px;
-  position: sticky;
+  position: relative;
   top: 15px;
+
+  .imageFrame {
+    width: 512px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    img {
+      transition: opacity 4s ease-in;
+    }
+  }
 }
+
 
 .text {
   max-width: 480px;
