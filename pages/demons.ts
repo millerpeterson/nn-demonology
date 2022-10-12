@@ -24,6 +24,8 @@ import febroth5 from "public/images/febroth/2353161219_18th_century_woodcut__dem
 import febroth6 from "public/images/febroth/2438544600_18th_century_woodcut__demon__evil.png";
 import febroth7 from "public/images/febroth/2909171049_18th_century_woodcut__demon__evil.png";
 
+import stoch1 from "public/images/stoch/444147928_18th_century_woodcut__colorful__demon__electricity.png";
+
 export interface Demon {
   rank: number;
   url: string;
@@ -65,6 +67,14 @@ const demonPages: Array<Demon> = [
     name: "Gannon",
     title: "The Vanishing Gradient",
     backgroundColor: "rgb(198, 188, 174)",
+  },
+  {
+    url: "stoch",
+    rank: 4,
+    images: [stoch1],
+    name: "Stoch",
+    title: "The Annealer",
+    backgroundColor: "rgb(243, 226, 182)",
   },
 ];
 
