@@ -1,4 +1,4 @@
-import demons, { Demon } from "./demons";
+import demons, { Demon } from "../lib/demons";
 import Link from "next/link";
 
 function DemonEntry({ rank, url, name, title }: Demon) {
@@ -13,7 +13,7 @@ function DemonEntry({ rank, url, name, title }: Demon) {
   );
 }
 
-export default function Index() {
+export default function Home() {
   const sortedDemons = demons.sort((da, db) => da.rank - db.rank);
   return (
     <ul>

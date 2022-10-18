@@ -1,12 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import demonPages, { Demon } from "../pages/demons";
-import { useInterval } from "../hooks/useInterval";
+import demonPages, { Demon } from "../lib/demons";
 
 import styles from "./demonPage.module.scss";
 import { Property } from "csstype";
-import TextAlign = Property.TextAlign;
 import { useState } from "react";
+import TextAlign = Property.TextAlign;
 
 interface DemonLinkProps {
   demon: Demon;
@@ -30,8 +29,6 @@ interface DemonPageProps {
   demon: Demon;
   children: string;
 }
-
-const warpDelay = 5000;
 
 export default function DemonPage({ demon, children }: DemonPageProps) {
   const { name, title, images, rank } = demon;
