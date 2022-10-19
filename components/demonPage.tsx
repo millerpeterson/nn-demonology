@@ -43,6 +43,9 @@ export default function DemonPage({ demon }: DemonPageProps) {
   return (
     <>
       <Head>
+        <title>
+          {rank}. {name} - {title}
+        </title>
         <style>
           {`
             body {

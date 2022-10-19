@@ -22,6 +22,7 @@ export default function Home() {
   return (
     <>
       <Head>
+        <title>Index Cerebri Daemonus</title>
         <style>
           {`
             body {
