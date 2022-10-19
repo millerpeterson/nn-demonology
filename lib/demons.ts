@@ -78,4 +78,15 @@ const demonPages: Array<Demon> = [
   },
 ];
 
+export function randomDemonImageIndex(demon) {
+  return Math.floor(Math.random() * demon.images.length);
+}
+
+export function demonLink(demon: Demon | null, imageIndex: number): string {
+  if (demon === null) {
+    return "";
+  }
+  return `/${demon.url}/${imageIndex}`;
+}
+
 export default demonPages;

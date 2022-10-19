@@ -1,13 +1,14 @@
-import demons, { Demon } from "../lib/demons";
+import demons, { demonLink, randomDemonImageIndex } from "../lib/demons";
 import Link from "next/link";
 import Head from "next/head";
 import BookPage from "../components/bookPage";
 import cover1 from "public/images/index/3508800080_18th_century_woodcut__evil__book__neuron__crimson.png";
 
-function DemonEntry({ rank, url, name, title }: Demon) {
+function DemonEntry({ demon }) {
+  const { rank, name, title } = demon;
   return (
     <li>
-      <Link href={url}>
+      <Link href={demonLink(demon, randomDemonImageIndex(demon))}>
         <a>
           {rank}. {name} - {title}
         </a>
@@ -33,7 +34,7 @@ export default function Home() {
         <h1>Index Cerebri Daemonus</h1>
         <ul>
           {sortedDemons.map((demon) => (
-            <DemonEntry key={demon.name} {...demon} />
+            <DemonEntry key={demon.name} demon={demon} />
           ))}
         </ul>
       </BookPage>

@@ -1,19 +1,26 @@
-import demonPages, { Demon } from "../lib/demons";
+import demonPages, {
+  Demon,
+  demonLink,
+  randomDemonImageIndex,
+} from "../lib/demons";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BookPage from "./bookPage";
+import { useRouter } from "next/router";
 
 interface DemonPageProps {
   demon: Demon;
+  imageIndex?: number;
 }
 
 export default function DemonPage({ demon }: DemonPageProps) {
   const { name, title, images, rank, backgroundColor } = demon;
 
-  const randomImageIndex = () =>
-    Math.floor(Math.random() * demon.images.length);
+  const router = useRouter();
+  const initialImageIndex = router.isReady ? parseInt(router.query.id[0]) : 0;
 
-  const [imageIndex] = useState(randomImageIndex());
+  const [prevImageIndex, setPrevImageIndex] = useState(0);
+  const [nextImageIndex, setNextImageIndex] = useState(0);
 
   const prevPage =
     rank > 1
@@ -23,6 +30,15 @@ export default function DemonPage({ demon }: DemonPageProps) {
     rank < Math.max(...demonPages.map((page) => page.rank))
       ? demonPages.find((demonPage) => demonPage.rank === rank + 1)
       : null;
+
+  useEffect(() => {
+    if (prevPage) {
+      setPrevImageIndex(randomDemonImageIndex(prevPage));
+    }
+    if (nextPage) {
+      setNextImageIndex(randomDemonImageIndex(nextPage));
+    }
+  }, [prevPage, nextPage]);
 
   return (
     <>
@@ -36,11 +52,11 @@ export default function DemonPage({ demon }: DemonPageProps) {
         </style>
       </Head>
       <BookPage
-        image={images[imageIndex]}
+        image={images[initialImageIndex]}
         prevPage={`${prevPage?.rank}. ${prevPage?.name}`}
-        prevPageHref={prevPage?.url}
+        prevPageHref={demonLink(prevPage, prevImageIndex)}
         nextPage={`${nextPage?.rank}. ${nextPage?.name}`}
-        nextPageHref={nextPage?.url}
+        nextPageHref={demonLink(nextPage, nextImageIndex)}
       >
         <h1>{rank}</h1>
         <h1>{name}</h1>
