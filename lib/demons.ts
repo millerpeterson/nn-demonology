@@ -25,6 +25,12 @@ import febroth6 from "public/images/febroth/2438544600_18th_century_woodcut__dem
 import febroth7 from "public/images/febroth/2909171049_18th_century_woodcut__demon__evil.png";
 
 import stoch1 from "public/images/stoch/444147928_18th_century_woodcut__colorful__demon__electricity.png";
+import stoch2 from "public/images/stoch/25893781_18th_century_woodcut_demon.png";
+import stoch3 from "public/images/stoch/436189172_18th_century_woodcut_demon.png";
+import stoch4 from "public/images/stoch/645457516_18th_century_woodcut_demon.png";
+import stoch5 from "public/images/stoch/1186555761_18th_century_woodcut_demon.png";
+import stoch6 from "public/images/stoch/1300575422_18th_century_woodcut_demon.png";
+import stoch7 from "public/images/stoch/2013509266_18th_century_woodcut_demon.png";
 
 export interface Demon {
   rank: number;
@@ -71,7 +77,7 @@ const demonPages: Array<Demon> = [
   {
     url: "stoch",
     rank: 4,
-    images: [stoch1],
+    images: [stoch1, stoch2, stoch3, stoch4, stoch5, stoch6, stoch7],
     name: "Stoch",
     title: "The Annealer",
     backgroundColor: "rgb(243, 226, 182)",

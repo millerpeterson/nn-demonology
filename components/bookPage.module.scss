@@ -27,6 +27,6 @@
 .image {
   max-width: 90%;
   border: 1px solid rgba(0, 0, 0, 0.7);
-  max-height: 90vw;
+  max-height: min(90vw, 512px);
 }
 
