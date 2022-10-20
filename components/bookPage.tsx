@@ -6,6 +6,7 @@ export default function BookPage(props) {
   const {
     image,
     imageAlt,
+    imageHref,
     prevPage,
     prevPageHref,
     nextPage,
@@ -17,7 +18,13 @@ export default function BookPage(props) {
   return (
     <section className={styles.page}>
       <div className={styles.image}>
-        <Image src={image} alt={imageAlt} />
+        {imageHref ? (
+          <Link href={imageHref}>
+            <Image src={image} alt={imageAlt} />
+          </Link>
+        ) : (
+          <Image src={image} alt={imageAlt} />
+        )}
       </div>
       <div className={styles.text}>{children}</div>
       <div className={styles.footerLinks}>

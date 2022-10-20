@@ -17,7 +17,8 @@ export default function DemonPage({ demon }: DemonPageProps) {
   const { name, title, images, rank, backgroundColor } = demon;
 
   const router = useRouter();
-  const initialImageIndex = router.isReady ? parseInt(router.query.id[0]) : 0;
+
+  const imageIndex = router.isReady ? parseInt(router.query.id[0]) : 0;
 
   const [prevImageIndex, setPrevImageIndex] = useState(0);
   const [nextImageIndex, setNextImageIndex] = useState(0);
@@ -55,7 +56,8 @@ export default function DemonPage({ demon }: DemonPageProps) {
         </style>
       </Head>
       <BookPage
-        image={images[initialImageIndex]}
+        image={images[imageIndex]}
+        imageHref={demonLink(demon, randomDemonImageIndex(demon))}
         prevPage={`${prevPage?.rank}. ${prevPage?.name}`}
         prevPageHref={demonLink(prevPage, prevImageIndex)}
         nextPage={`${nextPage?.rank}. ${nextPage?.name}`}
