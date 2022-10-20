@@ -2,7 +2,8 @@ import demons, { demonLink, randomDemonImageIndex } from "../lib/demons";
 import Link from "next/link";
 import Head from "next/head";
 import BookPage from "../components/bookPage";
-import cover1 from "public/images/index/3508800080_18th_century_woodcut__evil__book__neuron__crimson.png";
+import cover1 from "public/images/index/605266220_18th_century_woodcut__demon_neuron_reading_a_book__red_highlights.png";
+import styles from "../styles/index.module.scss";
 
 function DemonEntry({ demon }) {
   const { rank, name, title } = demon;
@@ -26,18 +27,21 @@ export default function Home() {
         <style>
           {`
             body {
-              background-color: rgb(218, 214, 211);
+              background-color: #D0B793;
             }
           `}
         </style>
       </Head>
       <BookPage image={cover1} linkIndex={false}>
         <h1>Index Cerebri Daemonus</h1>
-        <ul>
-          {sortedDemons.map((demon) => (
-            <DemonEntry key={demon.name} demon={demon} />
-          ))}
-        </ul>
+        <p>A catalog of the greater demons who stalk the latent mindspace.</p>
+        <div className={styles.demonLinksContainer}>
+          <ul className={styles.demonLinks}>
+            {sortedDemons.map((demon) => (
+              <DemonEntry key={demon.name} demon={demon} />
+            ))}
+          </ul>
+        </div>
       </BookPage>
     </>
   );

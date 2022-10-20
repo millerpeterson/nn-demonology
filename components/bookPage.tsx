@@ -17,9 +17,7 @@ export default function BookPage(props) {
   return (
     <section className={styles.page}>
       <div className={styles.image}>
-        <div className={styles.imageFrame}>
-          <Image src={image} alt={imageAlt} />
-        </div>
+        <Image src={image} alt={imageAlt} />
       </div>
       <div className={styles.text}>{children}</div>
       <div className={styles.footerLinks}>
