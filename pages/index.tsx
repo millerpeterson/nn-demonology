@@ -1,4 +1,8 @@
-import demons, { demonLink, randomDemonImageIndex } from "../lib/demons";
+import demons, {
+  demonLink,
+  demonNameRank,
+  randomDemonImageIndex,
+} from "../lib/demons";
 import Link from "next/link";
 import Head from "next/head";
 import BookPage from "../components/bookPage";
@@ -11,7 +15,7 @@ function DemonEntry({ demon }) {
     <li>
       <Link href={demonLink(demon, randomDemonImageIndex(demon))}>
         <a>
-          {rank}. {name} - {title}
+          {demonNameRank(demon)} - {title}
         </a>
       </Link>
     </li>

@@ -1,6 +1,7 @@
 import demonPages, {
   Demon,
   demonLink,
+  demonNameRank,
   randomDemonImageIndex,
 } from "../lib/demons";
 import Head from "next/head";
@@ -58,13 +59,12 @@ export default function DemonPage({ demon }: DemonPageProps) {
       <BookPage
         image={images[imageIndex]}
         imageHref={demonLink(demon, randomDemonImageIndex(demon))}
-        prevPage={`${prevPage?.rank}. ${prevPage?.name}`}
+        prevPage={demonNameRank(prevPage)}
         prevPageHref={demonLink(prevPage, prevImageIndex)}
-        nextPage={`${nextPage?.rank}. ${nextPage?.name}`}
+        nextPage={demonNameRank(nextPage)}
         nextPageHref={demonLink(nextPage, nextImageIndex)}
       >
-        <h1>{rank}</h1>
-        <h1>{name}</h1>
+        <h1>{demonNameRank(demon)}</h1>
         <h2>{title}</h2>
       </BookPage>
     </>

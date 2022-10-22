@@ -95,4 +95,17 @@ export function demonLink(demon: Demon | null, imageIndex: number): string {
   return `/${demon.url}/${imageIndex}`;
 }
 
+const romanNumerals = ["I", "II", "III", "IV", "V", "VI", "VII"];
+
+export function rankRomanNumeral(rank: number): string {
+  return romanNumerals[rank - 1];
+}
+
+export function demonNameRank(demon: Demon | null): string {
+  if (demon === null) {
+    return "";
+  }
+  return `${rankRomanNumeral(demon.rank)}. ${demon.name}`;
+}
+
 export default demonPages;
