@@ -10,7 +10,7 @@ import cover1 from "public/images/index/605266220_18th_century_woodcut__demon_ne
 import styles from "../styles/index.module.scss";
 
 function DemonEntry({ demon }) {
-  const { rank, name, title } = demon;
+  const { title } = demon;
   return (
     <li>
       <Link href={demonLink(demon, randomDemonImageIndex(demon))}>
@@ -38,7 +38,9 @@ export default function Home() {
       </Head>
       <BookPage image={cover1} linkIndex={false}>
         <h1>Index Cerebri Daemonus</h1>
-        <p>A catalog of the greater demons who stalk the latent mindspace.</p>
+        <p className={styles.description}>
+          A catalog of the greater demons who stalk the latent mindspace.
+        </p>
         <div className={styles.demonLinksContainer}>
           <ul className={styles.demonLinks}>
             {sortedDemons.map((demon) => (
