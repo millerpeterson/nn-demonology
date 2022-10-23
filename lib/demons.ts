@@ -32,6 +32,14 @@ import stoch5 from "public/images/stoch/1186555761_18th_century_woodcut_demon.pn
 import stoch6 from "public/images/stoch/1300575422_18th_century_woodcut_demon.png";
 import stoch7 from "public/images/stoch/2013509266_18th_century_woodcut_demon.png";
 
+import baeyasul1 from "public/images/baeyasul/76845061_18th_century_woodcut__demon__flowing_rapids__red_highlights.png";
+import baeyasul2 from "public/images/baeyasul/1015745367_18th_century_woodcut__demon__flowing_rapids__red_highlights.png";
+import baeyasul3 from "public/images/baeyasul/1590248119_18th_century_woodcut__demon__flowing_rapids__red_highlights.png";
+import baeyasul4 from "public/images/baeyasul/2085037179_18th_century_woodcut__demon__flowing_rapids__red_highlights.png";
+import baeyasul5 from "public/images/baeyasul/2144170813_18th_century_woodcut__demon__flowing_rapids__red_highlights.png";
+import baeyasul6 from "public/images/baeyasul/2204403836_18th_century_woodcut__demon__flowing_rapids__red_highlights.png";
+import baeyasul7 from "public/images/baeyasul/2975403784_18th_century_woodcut__demon__flowing_rapids__red_highlights.png";
+
 export interface Demon {
   rank: number;
   url: string;
@@ -81,6 +89,22 @@ const demonPages: Array<Demon> = [
     name: "Stoch",
     title: "The Annealer",
     backgroundColor: "rgb(243, 226, 182)",
+  },
+  {
+    url: "baeyasul",
+    rank: 5,
+    images: [
+      baeyasul1,
+      baeyasul2,
+      baeyasul3,
+      baeyasul4,
+      baeyasul5,
+      baeyasul6,
+      baeyasul7,
+    ],
+    name: "Baeyasul",
+    title: "Sieve of Excessive Fit",
+    backgroundColor: "#EDDFC4",
   },
 ];
 
