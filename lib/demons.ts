@@ -40,6 +40,14 @@ import baeyasul5 from "public/images/baeyasul/2144170813_18th_century_woodcut__d
 import baeyasul6 from "public/images/baeyasul/2204403836_18th_century_woodcut__demon__flowing_rapids__red_highlights.png";
 import baeyasul7 from "public/images/baeyasul/2975403784_18th_century_woodcut__demon__flowing_rapids__red_highlights.png";
 
+import lasser1 from "public/images/lasser/703644009_18th_century_woodcut__demon_echoes__twisting_long_infinite_hallway_of_mirrors__red_highlights.png";
+import lasser2 from "public/images/lasser/853068126_18th_century_woodcut__demon_s_reflection__hall_of_mirrors__red_highlights.png";
+import lasser3 from "public/images/lasser/1205369192_18th_century_woodcut__demon_echoes__twisting_long_infinite_hallway_of_mirrors__red_highlights.png";
+import lasser4 from "public/images/lasser/1221283560_18th_century_woodcut__demon_echoes__twisting_long_infinite_hallway_of_mirrors__red_highlights.png";
+import lasser5 from "public/images/lasser/1569035931_18th_century_woodcut__demon_echoes__twisting_long_infinite_hallway_of_mirrors__red_highlights.png";
+import lasser6 from "public/images/lasser/1944130944_18th_century_woodcut__demon_echoes__twisting_long_infinite_hallway_of_mirrors__red_highlights.png";
+import lasser7 from "public/images/lasser/2658231189_18th_century_woodcut__demon_echoes__twisting_long_infinite_hallway_of_mirrors__red_highlights.png";
+
 export interface Demon {
   rank: number;
   url: string;
@@ -105,6 +113,14 @@ const demonPages: Array<Demon> = [
     name: "Baeyasul",
     title: "Sieve of Excessive Fit",
     backgroundColor: "#EDDFC4",
+  },
+  {
+    url: "lasser",
+    rank: 6,
+    images: [lasser1, lasser2, lasser3, lasser4, lasser5, lasser6, lasser7],
+    name: "Lasser",
+    title: "Looking Glass of Collapsing Modes",
+    backgroundColor: "#D5A891",
   },
 ];
 
