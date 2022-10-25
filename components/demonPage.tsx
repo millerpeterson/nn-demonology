@@ -8,6 +8,7 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import BookPage from "./bookPage";
 import { useRouter } from "next/router";
+import styles from "./demonPage.module.scss";
 
 interface DemonPageProps {
   demon: Demon;
@@ -65,7 +66,7 @@ export default function DemonPage({ demon }: DemonPageProps) {
         nextPageHref={demonLink(nextPage, nextImageIndex)}
       >
         <h1>{demonNameRank(demon)}</h1>
-        <h2>{title}</h2>
+        <h2 className={styles.title}>{title}</h2>
       </BookPage>
     </>
   );
