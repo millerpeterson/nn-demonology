@@ -31,7 +31,7 @@ export default function Home() {
         <style>
           {`
             body {
-              background-color: #D0B793;
+              background-color: #E5CCA1;
             }
           `}
         </style>
