@@ -49,6 +49,12 @@ import lasser6 from "public/images/lasser/1944130944_18th_century_woodcut__demon
 import lasser7 from "public/images/lasser/2658231189_18th_century_woodcut__demon_echoes__twisting_long_infinite_hallway_of_mirrors__red_highlights.png";
 
 import umbric1 from "public/images/umbric/2246516728_18th_century_woodcut__red_highlights__demon_shadow_at_the_end_of_a_long_hallway(1).png";
+import umbric2 from "public/images/umbric/251472731_18th_century_woodcut__ominous__evil_spirit.png";
+import umbric3 from "public/images/umbric/1083836237_18th_century_woodcut__ominous__evil_spirit.png";
+import umbric4 from "public/images/umbric/1749467535_18th_century_woodcut__ominous__evil_spirit.png";
+import umbric5 from "public/images/umbric/2944417434_18th_century_woodcut__ominous__evil_spirit.png";
+import umbric6 from "public/images/umbric/3023418986_18th_century_woodcut__ominous__evil_spirit.png";
+import umbric7 from "public/images/umbric/3378682056_18th_century_woodcut__demon__evil__ominous.png";
 
 export interface Demon {
   rank: number;
@@ -127,7 +133,7 @@ const demonPages: Array<Demon> = [
   {
     url: "umbric",
     rank: 7,
-    images: [umbric1],
+    images: [umbric1, umbric2, umbric3, umbric4, umbric5, umbric6, umbric7],
     name: "Umbric",
     title: "Shadow of the Trainer",
     backgroundColor: "#F5D5AA",
