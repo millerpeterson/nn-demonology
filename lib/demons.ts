@@ -119,8 +119,16 @@ const demonPages: Array<Demon> = [
     rank: 6,
     images: [lasser1, lasser2, lasser3, lasser4, lasser5, lasser6, lasser7],
     name: "Lasser",
-    title: "Looking Glass of Collapsing Modes",
+    title: "The Collapsing Glass",
     backgroundColor: "#D5A891",
+  },
+  {
+    url: "umbriln",
+    rank: 7,
+    images: [],
+    name: "Umbriln",
+    title: "Shadow of the Trainer",
+    backgroundColor: "white",
   },
 ];
 

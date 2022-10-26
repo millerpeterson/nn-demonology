@@ -6,11 +6,18 @@
 
 .description {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.divider {
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.6);
+  margin: 30px 35vw 25px 35vw;
 }
 
 .demonLinks {
   text-align: left;
   font-size: 17px;
+  margin-top: 0;
 }
 

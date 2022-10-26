@@ -38,9 +38,10 @@ export default function Home() {
       </Head>
       <BookPage image={cover1} linkIndex={false}>
         <h1>Index Cerebri Daemonus</h1>
-        <p className={styles.description}>
+        <div className={styles.description}>
           A catalog of the greater demons who stalk the latent mindspace.
-        </p>
+        </div>
+        <div className={styles.divider} />
         <div className={styles.demonLinksContainer}>
           <ul className={styles.demonLinks}>
             {sortedDemons.map((demon) => (
