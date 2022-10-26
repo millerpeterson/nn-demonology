@@ -13,18 +13,15 @@ export default function BookPage(props) {
     nextPageHref,
     linkIndex = true,
     children,
+    onImageClick = null,
   } = props;
+
+  const nextImage = <Image src={image} alt={imageAlt} onClick={onImageClick} />;
 
   return (
     <section className={styles.page}>
       <div className={styles.image}>
-        {imageHref ? (
-          <Link href={imageHref}>
-            <Image src={image} alt={imageAlt} />
-          </Link>
-        ) : (
-          <Image src={image} alt={imageAlt} />
-        )}
+        {imageHref ? <Link href={imageHref}>{nextImage}</Link> : nextImage}
       </div>
       <div className={styles.text}>{children}</div>
       <div className={styles.footerLinks}>

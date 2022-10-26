@@ -10,6 +10,21 @@
   margin-right: 30px;
 }
 
+.help {
+  position: sticky;
+  top: 10vh;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  transition: opacity 1s;
+  .helpText {
+    border-radius: 5px;
+    padding: 4px 12px;
+    background-color: rgba(229, 204, 161, 0.8);
+    color: rgba(0, 0, 0, 0.75);
+  }
+}
+
 .divider {
   border-bottom: 1px dotted rgba(0, 0, 0, 0.6);
   margin: 30px 35vw 25px 35vw;
