@@ -36,10 +36,10 @@ export default function DemonPage({ demon }: DemonPageProps) {
 
   useEffect(() => {
     if (prevPage) {
-      setPrevImageIndex(randomDemonImageIndex(prevPage));
+      setPrevImageIndex(randomDemonImageIndex(prevPage, -1));
     }
     if (nextPage) {
-      setNextImageIndex(randomDemonImageIndex(nextPage));
+      setNextImageIndex(randomDemonImageIndex(nextPage, -1));
     }
   }, [prevPage, nextPage]);
 
@@ -59,7 +59,7 @@ export default function DemonPage({ demon }: DemonPageProps) {
       </Head>
       <BookPage
         image={images[imageIndex]}
-        imageHref={demonLink(demon, randomDemonImageIndex(demon))}
+        imageHref={demonLink(demon, randomDemonImageIndex(demon, imageIndex))}
         prevPage={demonNameRank(prevPage)}
         prevPageHref={demonLink(prevPage, prevImageIndex)}
         nextPage={demonNameRank(nextPage)}

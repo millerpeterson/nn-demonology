@@ -55,6 +55,7 @@ import umbric4 from "public/images/umbric/1749467535_18th_century_woodcut__omino
 import umbric5 from "public/images/umbric/2944417434_18th_century_woodcut__ominous__evil_spirit.png";
 import umbric6 from "public/images/umbric/3023418986_18th_century_woodcut__ominous__evil_spirit.png";
 import umbric7 from "public/images/umbric/3378682056_18th_century_woodcut__demon__evil__ominous.png";
+import { randomIndexExcluding } from "./random";
 
 export interface Demon {
   rank: number;
@@ -140,8 +141,8 @@ const demonPages: Array<Demon> = [
   },
 ];
 
-export function randomDemonImageIndex(demon) {
-  return Math.floor(Math.random() * demon.images.length);
+export function randomDemonImageIndex(demon, currentIndex) {
+  return randomIndexExcluding(demon.images, currentIndex);
 }
 
 export function demonLink(demon: Demon | null, imageIndex: number): string {
