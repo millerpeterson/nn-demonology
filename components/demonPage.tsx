@@ -16,7 +16,7 @@ interface DemonPageProps {
 }
 
 export default function DemonPage({ demon }: DemonPageProps) {
-  const { name, title, images, rank, backgroundColor } = demon;
+  const { name, title, images, rank, backgroundColor, prompt } = demon;
 
   const router = useRouter();
 
@@ -64,6 +64,7 @@ export default function DemonPage({ demon }: DemonPageProps) {
       </Head>
       <BookPage
         image={images[imageIndex]}
+        imageAlt={prompt}
         imageHref={demonLink(demon, randomDemonImageIndex(demon, imageIndex))}
         prevPage={demonNameRank(prevPage)}
         prevPageHref={demonLink(prevPage, prevImageIndex)}

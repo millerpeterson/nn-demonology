@@ -64,6 +64,7 @@ export interface Demon {
   name: string;
   title: string;
   backgroundColor: string;
+  prompt: string;
 }
 
 const demonPages: Array<Demon> = [
@@ -74,6 +75,7 @@ const demonPages: Array<Demon> = [
     name: "Seepus",
     title: "The Serial Shepherd",
     backgroundColor: "rgb(234, 213, 164)",
+    prompt: "18th century woodcut, evil, red highlights, blind eyes",
   },
   {
     url: "febroth",
@@ -90,6 +92,7 @@ const demonPages: Array<Demon> = [
     name: "Febroth",
     title: "Sower of Data Famine",
     backgroundColor: "rgb(216, 197, 159)",
+    prompt: "18th century woodcut, starvation, demon",
   },
   {
     url: "gannon",
@@ -98,6 +101,7 @@ const demonPages: Array<Demon> = [
     name: "Gannon",
     title: "The Vanishing Gradient",
     backgroundColor: "rgb(198, 188, 174)",
+    prompt: "18th century linocut, nightmare, web, red highlights",
   },
   {
     url: "stoch",
@@ -106,6 +110,7 @@ const demonPages: Array<Demon> = [
     name: "Stoch",
     title: "The Annealer",
     backgroundColor: "rgb(243, 226, 182)",
+    prompt: "18th century woodcut, colorful, demon, electricity",
   },
   {
     url: "baeyasul",
@@ -122,6 +127,7 @@ const demonPages: Array<Demon> = [
     name: "Baeyasul",
     title: "Sieve of Excessive Fit",
     backgroundColor: "#EDDFC4",
+    prompt: "18th century woodcut, demon, flowing rapids, red highlights",
   },
   {
     url: "lasser",
@@ -130,6 +136,8 @@ const demonPages: Array<Demon> = [
     name: "Lasser",
     title: "The Collapsing Glass",
     backgroundColor: "#D5A891",
+    prompt:
+      "18th century woodcut, demon's reflection, hall of mirrors, red highlights",
   },
   {
     url: "umbric",
@@ -138,6 +146,8 @@ const demonPages: Array<Demon> = [
     name: "Umbric",
     title: "Shadow of the Trainer",
     backgroundColor: "#F5D5AA",
+    prompt:
+      "18th century woodcut, red highlights, demon shadow at the end of a long hallway",
   },
 ];
 

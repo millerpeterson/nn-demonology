@@ -75,6 +75,7 @@ export default function Home() {
       )}
       <BookPage
         image={morphedImage ?? cover1}
+        imageAlt="18th century woodcut, demon neuron reading a book, red highlights"
         linkIndex={false}
         onImageClick={() => {
           setHelpVisible(false);
