@@ -34,6 +34,11 @@ export default function DemonPage({ demon }: DemonPageProps) {
       ? demonPages.find((demonPage) => demonPage.rank === rank + 1)
       : null;
 
+  const nextPageTitle = nextPage ? demonNameRank(nextPage) : "About";
+  const nextPageHref = nextPage
+    ? demonLink(nextPage, nextImageIndex)
+    : "https://github.com/millerpeterson/nn-demonology";
+
   useEffect(() => {
     if (prevPage) {
       setPrevImageIndex(randomDemonImageIndex(prevPage, -1));
@@ -62,8 +67,8 @@ export default function DemonPage({ demon }: DemonPageProps) {
         imageHref={demonLink(demon, randomDemonImageIndex(demon, imageIndex))}
         prevPage={demonNameRank(prevPage)}
         prevPageHref={demonLink(prevPage, prevImageIndex)}
-        nextPage={demonNameRank(nextPage)}
-        nextPageHref={demonLink(nextPage, nextImageIndex)}
+        nextPage={nextPageTitle}
+        nextPageHref={nextPageHref}
       >
         <h1>{demonNameRank(demon)}</h1>
         <h2 className={styles.title}>{title}</h2>
